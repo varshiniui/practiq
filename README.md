@@ -1,7 +1,7 @@
 <div align="center">
   <img src="public/practiq-logo.png" alt="Practiq Logo" height="80" />
   
-  # Practiq — AI Mock Interview Coach
+  # Practiq - AI Mock Interview Coach
 
   **Practice smarter. Land faster.**
   
@@ -13,7 +13,7 @@
   ![Supabase](https://img.shields.io/badge/Supabase-Auth_+_DB-green?style=for-the-badge&logo=supabase)
   ![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=for-the-badge&logo=vercel)
 
-  [Live Demo](https://practiq.vercel.app) · [Report Bug](https://github.com/varshiniui/practiq/issues) · [LinkedIn](https://linkedin.com/in/varshini-shya)
+  [Live Demo](https://practiq-zeta.vercel.app/) · [Report Bug](https://github.com/varshiniui/practiq/issues) · [LinkedIn](https://linkedin.com/in/varshini-shya) · [Github](https://github.com/varshiniui/practiq)
 
 </div>
 
