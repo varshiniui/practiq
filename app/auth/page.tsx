@@ -76,6 +76,25 @@ export default function AuthPage() {
       <div className="absolute -top-40 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none animate-[blob_7s_infinite_3s]" />
       <div className="absolute -bottom-40 left-1/4 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none animate-[blob_7s_infinite_5s]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))] pointer-events-none" />
+      
+      {/* Animated grid lines */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10" style={{
+          backgroundImage: `linear-gradient(0deg, transparent 24%, rgba(168, 85, 247, 0.05) 25%, rgba(168, 85, 247, 0.05) 26%, transparent 27%, transparent 74%, rgba(168, 85, 247, 0.05) 75%, rgba(168, 85, 247, 0.05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(168, 85, 247, 0.05) 25%, rgba(168, 85, 247, 0.05) 26%, transparent 27%, transparent 74%, rgba(168, 85, 247, 0.05) 75%, rgba(168, 85, 247, 0.05) 76%, transparent 77%, transparent)`,
+          backgroundSize: '60px 60px'
+        }} />
+      </div>
+      
+      {/* Animated floating particles */}
+      <div className="absolute top-10 left-10 w-2 h-2 bg-purple-400/60 rounded-full animate-pulse" style={{ animationDuration: '3s' }} />
+      <div className="absolute top-1/3 right-20 w-1.5 h-1.5 bg-pink-400/50 rounded-full animate-pulse" style={{ animationDuration: '4s' }} />
+      <div className="absolute bottom-20 left-1/4 w-2 h-2 bg-blue-400/60 rounded-full animate-pulse" style={{ animationDuration: '2.5s' }} />
+      <div className="absolute bottom-1/3 right-10 w-1 h-1 bg-cyan-400/50 rounded-full animate-pulse" style={{ animationDuration: '3.5s' }} />
+      <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-purple-300/40 rounded-full animate-pulse" style={{ animationDuration: '4.5s' }} />
+      
+      {/* Subtle animated line effects */}
+      <div className="absolute top-1/4 left-1/4 w-64 h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent animate-pulse" style={{ animationDuration: '4s' }} />
+      <div className="absolute bottom-1/3 right-1/4 w-64 h-px bg-gradient-to-r from-transparent via-pink-500/20 to-transparent animate-pulse" style={{ animationDuration: '3.5s' }} />
 
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -107,10 +126,10 @@ export default function AuthPage() {
           {/* Google Sign-In Button - Prominent at Top */}
           <button
             onClick={handleGoogleSignIn}
-            className="w-full bg-white/5 backdrop-blur-md border border-white/20 text-white font-bold py-5 rounded-xl shadow-xl shadow-purple-500/5 hover:bg-white/10 hover:border-white/30 hover:shadow-purple-500/20 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 mb-8 group"
+            className="w-full bg-white/5 backdrop-blur-md border border-white/20 text-white font-bold py-3.5 rounded-xl shadow-xl shadow-purple-500/5 hover:bg-white/10 hover:border-white/30 hover:shadow-purple-500/20 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 mb-8 group"
           >
-            <Globe size={24} className="group-hover:text-purple-300 transition-colors" />
-            <span className="text-lg">Sign in with Google</span>
+            <Globe size={20} className="group-hover:text-purple-300 transition-colors" />
+            <span className="text-base">Sign in with Google</span>
           </button>
 
           <div className="relative mb-8">
