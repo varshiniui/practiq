@@ -101,6 +101,20 @@ export default function AuthPage() {
             </button>
           </div>
 
+          {/* Google Sign-In Button - Prominent at Top */}
+          <button
+            onClick={handleGoogleSignIn}
+            className="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold py-5 rounded-xl shadow-xl shadow-purple-500/25 hover:opacity-90 hover:shadow-purple-500/40 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-3 mb-8"
+          >
+            <Globe size={24} />
+            <span className="text-lg">Sign in with Google</span>
+          </button>
+
+          <div className="relative mb-8">
+            <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/5"></div></div>
+            <div className="relative flex justify-center text-[10px] uppercase tracking-widest font-black"><span className="bg-black px-4 text-gray-600">Or</span></div>
+          </div>
+
           <form onSubmit={handleAuth} className="space-y-6">
             {!isSignIn && (
               <motion.div 
@@ -190,20 +204,18 @@ export default function AuthPage() {
                 </>
               )}
             </button>
+
+            {!isSignIn && (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-center text-xs text-gray-500 mt-4 px-2"
+              >
+                <p>Having trouble signing up? Use Google sign in above.</p>
+              </motion.div>
+            )}
           </form>
 
-          <div className="relative my-8">
-            <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/5"></div></div>
-            <div className="relative flex justify-center text-[10px] uppercase tracking-widest font-black"><span className="bg-black px-4 text-gray-600">Or continue with</span></div>
-          </div>
-
-          <button
-            onClick={handleGoogleSignIn}
-            className="w-full bg-white/5 border border-white/20 text-white font-bold py-4 rounded-xl hover:bg-white/10 hover:border-purple-500/50 transition-all duration-200 flex items-center justify-center gap-3 active:scale-[0.98]"
-          >
-            <Globe size={20} />
-            Sign in with Google
-          </button>
         </div>
 
         <p className="text-center text-gray-600 text-[10px] uppercase tracking-[0.2em] mt-10">
