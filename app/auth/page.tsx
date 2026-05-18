@@ -68,11 +68,14 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-black via-purple-950/30 to-black flex items-center justify-center p-6 relative overflow-hidden">
       {/* Animated background blobs */}
-      <div className="absolute top-1/4 -left-48 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-3xl pointer-events-none animate-[blob_7s_infinite]" />
-      <div className="absolute bottom-1/4 -right-48 w-[500px] h-[500px] bg-pink-600/15 rounded-full blur-3xl pointer-events-none animate-[blob_7s_infinite_2s]" />
-      <div className="absolute top-3/4 left-1/3 w-72 h-72 bg-violet-600/10 rounded-full blur-3xl pointer-events-none animate-[blob_7s_infinite_4s]" />
+      <div className="absolute top-1/4 -left-48 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-3xl pointer-events-none animate-[blob_7s_infinite]" />
+      <div className="absolute bottom-1/4 -right-48 w-[500px] h-[500px] bg-pink-600/20 rounded-full blur-3xl pointer-events-none animate-[blob_7s_infinite_2s]" />
+      <div className="absolute top-3/4 left-1/3 w-72 h-72 bg-violet-600/15 rounded-full blur-3xl pointer-events-none animate-[blob_7s_infinite_4s]" />
+      <div className="absolute -top-40 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none animate-[blob_7s_infinite_3s]" />
+      <div className="absolute -bottom-40 left-1/4 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none animate-[blob_7s_infinite_5s]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.1),rgba(255,255,255,0))] pointer-events-none" />
 
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -86,16 +89,16 @@ export default function AuthPage() {
 
         <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-black/50 ring-1 ring-white/5">
           {/* Tab Switcher */}
-          <div className="flex bg-black/30 p-1 rounded-xl mb-8 border border-white/5">
+          <div className="flex bg-white/5 backdrop-blur-md p-1 rounded-xl mb-8 border border-white/10">
             <button
               onClick={() => { setIsSignIn(true); setMessage(null); }}
-              className={`flex-1 py-3 text-sm font-bold rounded-lg transition-all duration-200 ${isSignIn ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-lg shadow-purple-500/20' : 'text-gray-400 hover:text-gray-200'}`}
+              className={`flex-1 py-3 text-sm font-bold rounded-lg transition-all duration-300 ${isSignIn ? 'bg-white/10 border border-white/20 text-white shadow-lg shadow-purple-500/10 backdrop-blur' : 'text-gray-400 hover:text-gray-200'}`}
             >
               Sign In
             </button>
             <button
               onClick={() => { setIsSignIn(false); setMessage(null); }}
-              className={`flex-1 py-3 text-sm font-bold rounded-lg transition-all duration-200 ${!isSignIn ? 'bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-lg shadow-purple-500/20' : 'text-gray-400 hover:text-gray-200'}`}
+              className={`flex-1 py-3 text-sm font-bold rounded-lg transition-all duration-300 ${!isSignIn ? 'bg-white/10 border border-white/20 text-white shadow-lg shadow-purple-500/10 backdrop-blur' : 'text-gray-400 hover:text-gray-200'}`}
             >
               Sign Up
             </button>
@@ -104,9 +107,9 @@ export default function AuthPage() {
           {/* Google Sign-In Button - Prominent at Top */}
           <button
             onClick={handleGoogleSignIn}
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold py-5 rounded-xl shadow-xl shadow-purple-500/25 hover:opacity-90 hover:shadow-purple-500/40 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-3 mb-8"
+            className="w-full bg-white/5 backdrop-blur-md border border-white/20 text-white font-bold py-5 rounded-xl shadow-xl shadow-purple-500/5 hover:bg-white/10 hover:border-white/30 hover:shadow-purple-500/20 active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 mb-8 group"
           >
-            <Globe size={24} />
+            <Globe size={24} className="group-hover:text-purple-300 transition-colors" />
             <span className="text-lg">Sign in with Google</span>
           </button>
 
@@ -193,7 +196,7 @@ export default function AuthPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold py-4 rounded-xl shadow-xl shadow-purple-500/25 hover:opacity-90 hover:shadow-purple-500/40 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white font-bold py-4 rounded-xl shadow-xl shadow-purple-500/25 hover:shadow-purple-500/40 hover:from-purple-500 hover:to-pink-400 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
