@@ -44,7 +44,7 @@ export default function AuthPage() {
           }
         });
         if (error) throw error;
-        setMessage({ type: 'success', text: "Check your email to confirm your account!" });
+        setMessage({ type: 'success', text: "Welcome to Practiq,Your interview journey starts here!" });
       }
     } catch (error: any) {
       setMessage({ type: 'error', text: error.message });
